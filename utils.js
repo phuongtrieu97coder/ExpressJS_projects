@@ -11,10 +11,10 @@ let getIndexById = (id, elementList)=>{
     });
 }
 
-let createElement = (elementType, queryArgumentObj)=>{
+let createElement = (elementType, bodyArgumentObj)=>{
    let currentId;
-   if(queryArgumentObj.hasOwnProperty("emoji")&&
-   queryArgumentObj.hasOwnProperty("name")){
+   if(bodyArgumentObj.hasOwnProperty("emoji")&&
+   bodyArgumentObj.hasOwnProperty("name")){
        if(elementType == "expressions"){
         expressionIdCounter+=1;
         currentId = expressionIdCounter;
@@ -24,8 +24,8 @@ let createElement = (elementType, queryArgumentObj)=>{
        }
        return {
         'id':currentId,
-        'emoji':queryArgumentObj.emoji,
-        'name':queryArgumentObj.name,
+        'emoji':bodyArgumentObj.emoji,
+        'name':bodyArgumentObj.name,
        }
    }else{
     return false;
