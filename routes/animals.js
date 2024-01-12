@@ -36,7 +36,7 @@ animalsRouter.put('/:id', (req, res, next) => {
 
 // Create an expression
 animalsRouter.post('/', (req, res, next) => {
-  const receivedExpression = createElement('animals', req.query);
+  const receivedExpression = createElement('animals', req.body);
   if (receivedExpression) {
     animals.push(receivedExpression);
     res.status(201).send(receivedExpression);
