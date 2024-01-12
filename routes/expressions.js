@@ -38,7 +38,7 @@ expressionsRouter.put("/:id",(req,res,next)=>{
 // Create an expression
 expressionsRouter.post("/",(req,res,next)=>{
     let receivedExpressions = 
-    createElement("expressions",req.query);
+    createElement("expressions",req.body);
     if(receivedExpressions){
         expressions.push(receivedExpressions);
         res.status(201).send(receivedExpressions);
